@@ -1,5 +1,8 @@
 # Release Notes of SonarQubeWithPostgres:
 
+* [GitHub](../../)
+* [Project: SonarQubeWithPostgres](./)
+
 ## 2019-08-17
 |Service|Version|
 |---|---|
