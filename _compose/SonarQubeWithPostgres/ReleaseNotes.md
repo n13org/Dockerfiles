@@ -1,6 +1,6 @@
 # Release Notes of SonarQubeWithPostgres:
 
-* [GitHub n13.org Dockerfiles](../../)
+* [GitHub n13.org Dockerfiles](https://github.com/n13org/Dockerfiles)
 * [Docker Compose](../)
 * [Project: SonarQubeWithPostgres](./)
 
