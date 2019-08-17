@@ -11,4 +11,4 @@ Most of the images are published to [n13.org on Docker Hub](https://cloud.docker
 The folder `_compose` contains Docker-Compose examples, each folder is a project.
 
 ### Docker Compose projects
-* [SonarQubeWithPostgres]()
+* [SonarQubeWithPostgres](./_compose/SonarQubeWithPostgres)
