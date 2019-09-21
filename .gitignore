@@ -1,0 +1,12 @@
+# Docker mkisofs
+mkisofs/in/
+mkisofs/out/
+mkisofs/*/*.iso
+
+# ISO-Images
+ISOs/
+ISOs2nd/
+ISOsBoot/
+
+# Packer Cache Folder
+packer_cache/
