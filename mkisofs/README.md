@@ -3,7 +3,8 @@
 Create docker image `n13org/mkisofs`.
 
 ```cmd
-docker build --tag n13org/mkisofs --file D:\n13.org\Dockerfiles\mkisofs\Dockerfile .
+cd mkisofs
+docker build --tag n13org/mkisofs .
 ```
 
 Use the docker image `n13org/mkisofs` as container to create an ISO. The `.\in` folder contains the files and folders which should be on root of the ISO. The `.\out` folder is where the ISO should be stored. Create symbolic links to link folders inside the `.\in` folder.  
