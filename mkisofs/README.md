@@ -6,7 +6,11 @@ Create docker image `n13org/mkisofs`.
 docker build --tag n13org/mkisofs --file D:\n13.org\Dockerfiles\mkisofs\Dockerfile .
 ```
 
-Use the docker image `n13org/mkisofs` as container to create an ISO. The `.\in` folder contains the files and folders which should be on root of the ISO. The `.\out` folder is where the ISO should be stored. Create symbolic links with `mklink` to link folders inside the `.\in` folder. On Linux Terminal replace `%cd%` with `$PWD`. For Powershell replace `%cd%` with `${PWD}`.
+Use the docker image `n13org/mkisofs` as container to create an ISO. The `.\in` folder contains the files and folders which should be on root of the ISO. The `.\out` folder is where the ISO should be stored. Create symbolic links to link folders inside the `.\in` folder.  
+
+To create **symbolic links** on Windows you can use `mklink` [MS docs mklink](https://docs.microsoft.com/de-de/windows-server/administration/windows-commands/mklink). On Mac and Linux you can use the comamnd `ln` [manpage of ln](https://linux.die.net/man/1/ln).  
+
+On Linux Terminal replace `%cd%` with `$PWD`. For Powershell replace `%cd%` with `${PWD}`.
 
 ```cmd
 mkdir in out
