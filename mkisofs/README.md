@@ -17,7 +17,7 @@ mkdir in out
 mklink /J .\in\devops D:\n13.org\scripts\DevOps
 mklink /J .\in\provisioning D:\n13.org\scripts\IaC\_provisioning
 mklink /J .\in\scripts D:\n13.org\scripts\IaC\_scripts
-docker run -it --rm -v "%cd%\in:/input" -v "%cd%\out:/output" n13org/mkisofs mkisofs -V "MyVolumeName" -J -R -input-charset iso8859-1 -o /output/packer.iso /input
+docker run -it --rm -v "%cd%\in:/input" -v "%cd%\out:/output" n13org/mkisofs mkisofs -V "MyVolumeName" -J -R -input-charset iso8859-1 -o /output/MyNewIso.iso /input
 REM del /f /s /q .\in
 REM rmdir /S /Q .\in
 ```
