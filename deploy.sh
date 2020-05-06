@@ -49,6 +49,9 @@ if [[ ${isLatest} ]]; then
     docker tag ${company}/${project} ${company}/${project}:latest
 fi
 
+## Docker username / PAT
+# docker login
+
 ## Upload image to registry
 # echo "Start uploading docker images for ${project} ${version} to registry ..."
 # docker push ${company}/${project}:${version}

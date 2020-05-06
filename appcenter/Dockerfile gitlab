@@ -1,0 +1,18 @@
+FROM ubuntu:18.04
+
+# Install packages
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y \
+	gnupg2 \
+	sudo \
+	curl \
+	nano
+
+# Add NodeJS, https://github.com/nodesource/distributions/blob/master/README.md
+RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+RUN sudo apt-get install -y nodejs
+
+# Add AppCenter-CLI and disable telemetry
+RUN npm install -g appcenter-cli && \
+	rm -f ~/.appcenter-cli/telemetryEnabled.json && \
+	appcenter telemetry off --disable-telemetry 
