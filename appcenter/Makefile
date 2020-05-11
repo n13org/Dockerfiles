@@ -19,7 +19,7 @@ appcenter-logout:
 appcenter-release:
 	appcenter distribute release \
 	--debug --disable-telemetry \
-	--file .\Setup\INSTALLATION_SOURCE\BrainloopOne.msi \
+	--file .\Setup\INSTALLATION_SOURCE\Setup.msi \
 	--release-notes "My Release Notes" \
 	--build-version "0.0.0.0" \
 	--app Brainloop/BONE \
