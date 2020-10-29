@@ -4,6 +4,12 @@ Build the docker image
 docker build -t n13org/mermaid-cli .
 ```
 
+Push the docker image
+
+```sh
+docker push n13org/mermaid-cli
+```
+
 Run the docker container
 
 ```sh
