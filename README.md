@@ -4,7 +4,7 @@ Various Dockerfiles and Docker-Compose files.
 
 For "playground", in ci-cd-automation, DevOps topics and IaaS providers.  
 
-Most of the images are published to [n13.org on Docker Hub](https://cloud.docker.com/u/n13org/repository/list).
+Most of the images are published to [n13.org on Docker Hub](https://cloud.docker.com/u/n13org/repository/list). Docker Hub offers a free plan or select a payed plan, [Pricing of Docker Hub](https://www.docker.com/pricing).
 
 ## Hints
 
