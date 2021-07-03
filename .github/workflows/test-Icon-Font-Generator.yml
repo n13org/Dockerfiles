@@ -110,5 +110,5 @@ jobs:
       
       - name: Create Web-Font
         run: |
-          docker run -it --rm -v$(myPWD):/home/work n13org/icon-font-generator "fnt-svg-webfont" "./assets/fonts" "./_layouts" "./_sass"
+          docker run -it --rm -v $(pwd):/home/work n13org/icon-font-generator "fnt-svg-webfont" "./assets/fonts" "./_layouts" "./_sass"
 
