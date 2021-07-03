@@ -53,7 +53,7 @@ jobs:
 
       - name: Copy files from node_modules to 3rdParty
         run: |
-          cp node_modules/@fortawesome/fontawesome-free/webfonts/*.* "$ASSETS_3RDPARTY_FONTS_DIR/webfonts/"
+          cp node_modules/@fortawesome/fontawesome-free/webfonts/*.* "$ASSETS_3RDPARTY_FONTS_DIR/"
           cp node_modules/@fortawesome/fontawesome-free/css/brands.min.css "$ASSETS_3RDPARTY_CSS_DIR/fa-brands.min.css"
           cp node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css "$ASSETS_3RDPARTY_CSS_DIR/fa-fontawesome.min.css"
           cp node_modules/@fortawesome/fontawesome-free/css/solid.min.css "$ASSETS_3RDPARTY_CSS_DIR/fa-solid.min.css"
