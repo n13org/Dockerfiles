@@ -7,7 +7,19 @@ on:
     # paths:
     #   - Icon-Font-Generator/**
 
+env:
+  ASSETS_3RDPARTY_DIR: assets/3rdParty
+  ASSETS_3RDPARTY_CSS_DIR: $ASSETS_3RDPARTY_DIR/css
+
 jobs:
+
+  preparation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Folders
+        run: |
+          mkdir -p $ASSETS_3RDPARTY_DIR
+          mkdir -p $ASSETS_3RDPARTY_CSS_DIR
 
   test:
 
@@ -23,10 +35,6 @@ jobs:
       matrix:
         node-version: [14.x]
     
-    env:
-      ASSETS_3RDPARTY_DIR: assets/3rdParty
-      ASSETS_3RDPARTY_CSS_DIR: $ASSETS_3RDPARTY_DIR/css
-
     steps:
       - uses: actions/checkout@v2
 
