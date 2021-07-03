@@ -103,7 +103,12 @@ jobs:
       - name: Install Iconfinder SVGs
         run: |
           curl https://www.iconfinder.com/icons/4691238/download/svg/512 --output $ASSETS_SVG_DIR/iconfinder-jekyll.svg
-          
+
       - name: Install Icons from Wikipedia
         run: |
           curl https://upload.wikimedia.org/wikipedia/commons/2/25/NuGet_project_logo.svg --output $ASSETS_SVG_DIR/nuget.svg
+      
+      - name: Create Web-Font
+        run: |
+          docker run -it --rm -v$(myPWD):/home/work n13org/icon-font-generator "fnt-svg-webfont" "./assets/fonts" "./_layouts" "./_sass"
+
