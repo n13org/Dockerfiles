@@ -14,18 +14,7 @@ env:
   ASSETS_3RDPARTY_FONTS_DIR: $ASSETS_3RDPARTY_DIR/webfonts
 
 jobs:
-
-  preparation:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Create Folders
-        run: |
-          mkdir -p $ASSETS_SVG_DIR
-          mkdir -p $ASSETS_3RDPARTY_DIR
-          mkdir -p $ASSETS_3RDPARTY_CSS_DIR
-          mkdir -p $ASSETS_3RDPARTY_FONTS_DIR
-
-  npm-install:
+  test-webfont-generation:
 
     # container:
     #   image: node:14.16
@@ -41,6 +30,13 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
+
+      - name: Create Folders
+        run: |
+          mkdir -p $ASSETS_SVG_DIR
+          mkdir -p $ASSETS_3RDPARTY_DIR
+          mkdir -p $ASSETS_3RDPARTY_CSS_DIR
+          mkdir -p $ASSETS_3RDPARTY_FONTS_DIR
 
       # https://docs.github.com/en/actions/guides/building-and-testing-nodejs
       - name: Use Node.js ${{ matrix.node-version }}
@@ -58,9 +54,6 @@ jobs:
           cp node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css "$ASSETS_3RDPARTY_CSS_DIR/fa-fontawesome.min.css"
           cp node_modules/@fortawesome/fontawesome-free/css/solid.min.css "$ASSETS_3RDPARTY_CSS_DIR/fa-solid.min.css"
 
-  copy:
-    runs-on: ubuntu-latest
-    steps:
       - name: Copy SVGs from fontawesome (BRANDS)
         run: |
           cp ./node_modules/@fortawesome/fontawesome-free/svgs/brands/facebook.svg $ASSETS_SVG_DIR/fa-brands-facebook.svg
@@ -71,6 +64,7 @@ jobs:
           cp ./node_modules/@fortawesome/fontawesome-free/svgs/brands/twitter.svg $ASSETS_SVG_DIR/fa-brands-twitter.svg
           cp ./node_modules/@fortawesome/fontawesome-free/svgs/brands/whatsapp.svg $ASSETS_SVG_DIR/fa-brands-whatsapp.svg
           cp ./node_modules/@fortawesome/fontawesome-free/svgs/brands/wordpress.svg $ASSETS_SVG_DIR/fa-brands-wordpress.svg
+
       - name: Copy SVGs from fontawesome (SOLID)
         run: |
           cp ./node_modules/@fortawesome/fontawesome-free/svgs/solid/arrow-down.svg $ASSETS_SVG_DIR/fa-solid-arrow-down.svg
@@ -105,9 +99,11 @@ jobs:
           cp ./node_modules/@fortawesome/fontawesome-free/svgs/solid/thumbs-up.svg $ASSETS_SVG_DIR/fa-solid-thumbs-up.svg
           cp ./node_modules/@fortawesome/fontawesome-free/svgs/solid/user.svg $ASSETS_SVG_DIR/fa-solid-user.svg
           cp ./node_modules/@fortawesome/fontawesome-free/svgs/solid/user-secret.svg $ASSETS_SVG_DIR/fa-solid-user-secret.svg
+
       - name: Install Iconfinder SVGs
         run: |
           curl https://www.iconfinder.com/icons/4691238/download/svg/512 --output $ASSETS_SVG_DIR/iconfinder-jekyll.svg
+          
       - name: Install Icons from Wikipedia
         run: |
           curl https://upload.wikimedia.org/wikipedia/commons/2/25/NuGet_project_logo.svg --output $ASSETS_SVG_DIR/nuget.svg
