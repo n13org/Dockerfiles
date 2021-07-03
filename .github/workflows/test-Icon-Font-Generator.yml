@@ -11,8 +11,11 @@ jobs:
 
   test:
 
-    runs-on: ubuntu-latest
+    # container:
+    #   image: node:14.16
 
+    runs-on: ubuntu-latest
+  
     # strategy:
     #   matrix:
     #     node-version: [10.x, 12.x, 14.x, 15.x]
@@ -34,10 +37,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install fontawesome via npm
-      - run: npm install --save-dev @fortawesome/fontawesome-free
+        run: npm install --save-dev @fortawesome/fontawesome-free
 
       - name: Copy files from node_modules
-      - run: cp node_modules/@fortawesome/fontawesome-free/webfonts/*.* "${{ASSETS_3RDPARTY_DIR}}/webfonts/"
-      - run: cp node_modules/@fortawesome/fontawesome-free/css/brands.min.css "${{ASSETS_3RDPARTY_CSS_DIR}}/fa-brands.min.css"
-      - run: cp node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css "${{ASSETS_3RDPARTY_CSS_DIR}}/fa-fontawesome.min.css"
-      - run: cp node_modules/@fortawesome/fontawesome-free/css/solid.min.css "${{ASSETS_3RDPARTY_CSS_DIR}}/fa-solid.min.css"
+        run: |
+          cp node_modules/@fortawesome/fontawesome-free/webfonts/*.* "${{ASSETS_3RDPARTY_DIR}}/webfonts/"
+          cp node_modules/@fortawesome/fontawesome-free/css/brands.min.css "${{ASSETS_3RDPARTY_CSS_DIR}}/fa-brands.min.css"
+          cp node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css "${{ASSETS_3RDPARTY_CSS_DIR}}/fa-fontawesome.min.css"
+          cp node_modules/@fortawesome/fontawesome-free/css/solid.min.css "${{ASSETS_3RDPARTY_CSS_DIR}}/fa-solid.min.css"
