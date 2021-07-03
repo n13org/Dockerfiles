@@ -1,0 +1,43 @@
+name: Test Icon-Font-Generator
+
+on:
+  push:
+    # branches:
+    #   - master
+    # paths:
+    #   - Icon-Font-Generator/**
+
+jobs:
+
+  test:
+
+    runs-on: ubuntu-latest
+
+    # strategy:
+    #   matrix:
+    #     node-version: [10.x, 12.x, 14.x, 15.x]
+    strategy:
+      matrix:
+        node-version: [14.x]
+    
+    env:
+      ASSETS_3RDPARTY_DIR: assets/3rdParty
+      ASSETS_3RDPARTY_CSS_DIR: ${{ASSETS_3RDPARTY_DIR}}/css
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # https://docs.github.com/en/actions/guides/building-and-testing-nodejs
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install fontawesome via npm
+      - run: npm install --save-dev @fortawesome/fontawesome-free
+
+      - name: Copy files from node_modules
+      - run: cp node_modules/@fortawesome/fontawesome-free/webfonts/*.* "${{ASSETS_3RDPARTY_DIR}}/webfonts/"
+      - run: cp node_modules/@fortawesome/fontawesome-free/css/brands.min.css "${{ASSETS_3RDPARTY_CSS_DIR}}/fa-brands.min.css"
+      - run: cp node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css "${{ASSETS_3RDPARTY_CSS_DIR}}/fa-fontawesome.min.css"
+      - run: cp node_modules/@fortawesome/fontawesome-free/css/solid.min.css "${{ASSETS_3RDPARTY_CSS_DIR}}/fa-solid.min.css"
