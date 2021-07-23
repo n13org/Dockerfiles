@@ -26,7 +26,7 @@ Run the docker container with any name, e.g. `openssl-converter-job` or ommit th
 
 > The `interactive` (`-it`) mode is needed because you will be maybe asked for the passphrase of the `pfx` file!
 
-**Powershell** Syntax, change `${PWD}` to `$(pwd)` if needed
+**Powershell** Syntax, change current working directory `${PWD}` to `$(pwd)` and line wraps `` ` `` to `\` if needed
 
 ```powershell
 docker run --rm -it --name openssl-converter-job `
