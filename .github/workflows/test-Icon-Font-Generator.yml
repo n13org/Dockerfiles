@@ -108,7 +108,7 @@ jobs:
         run: |
           curl https://upload.wikimedia.org/wikipedia/commons/2/25/NuGet_project_logo.svg --output $ASSETS_SVG_DIR/nuget.svg
       
-      - name: Create Web-Font
-        run: |
-          docker run -it --rm -v $(pwd):/home/work n13org/icon-font-generator "fnt-svg-webfont" "./assets/fonts" "./_layouts" "./_sass"
+      # - name: Create Web-Font
+      #   run: |
+      #     docker run -it --rm -v $(pwd):/home/work n13org/icon-font-generator "fnt-svg-webfont" "./assets/fonts" "./_layouts" "./_sass"
 
