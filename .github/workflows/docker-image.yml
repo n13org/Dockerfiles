@@ -1,5 +1,16 @@
 name: Docker Image CI
 
+## https://www.bing.com/search?q=github+workflow+trigger+file+of+folder+chnaged&qs=n&form=QBRE&msbsrank=0_0__0&sp=-1&pq=github+workflow+trigger+file+of+folder+chnaged&sc=0-46&sk=&cvid=11EC1E2CE6154C5898EA7E19CDC86EAA
+## https://stackoverflow.com/questions/63460875/github-actions-how-do-you-trigger-a-push-when-a-specific-directory-in-a-branch
+# on:
+#   push:
+#     branches:
+#       - master
+#     paths:
+#       - my-directory/**
+
+# https://github.com/tancredi/fantasticon
+
 on:
   push:
     branches: [ 'releases/**' ]

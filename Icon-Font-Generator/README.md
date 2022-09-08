@@ -6,12 +6,12 @@ This project is part of a [collection](https://github.com/n13org/Dockerfiles) of
 
 The working directory for the container is `/home/work`. It has to be defined as a `VOLUME` during `docker run`. The entrypoint of the docker container can handle parameters. The source folder of the `SVGs` is `./assets/svg/`, please drop all files to that folder before run the container.
 
-|ID| Name|Default|
-|---|---|---|
-|1|font name|fnt-svg-webfont|
-|2|output folder|./assets/fonts|
-|3|html path|./_layouts|
-|4|css path|./_sass|
+| ID | Name          | Default         |
+|----|---------------|-----------------|
+| 1  | font name     | fnt-svg-webfont |
+| 2  | output folder | ./assets/fonts  |
+| 3  | html path     | ./_layouts      |
+| 4  | css path      | ./_sass         |
 
 ## Build and Push
 
