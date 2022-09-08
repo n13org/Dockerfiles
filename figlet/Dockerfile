@@ -18,4 +18,7 @@ RUN apk add --no-cache \
     figlet-doc
 COPY --from=fontdownloader /figlet-fonts/* /usr/share/figlet/fonts/
 
+WORKDIR /out
+VOLUME /out
+
 ENTRYPOINT ["figlet"]
