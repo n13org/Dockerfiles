@@ -1,0 +1,11 @@
+# JS NodeJS YARN packages
+node_modules/
+
+# Icon-Font-Generator
+Icon-Font-Generator/scripts/_layouts/
+Icon-Font-Generator/scripts/_sass/
+Icon-Font-Generator/scripts/assets/
+Icon-Font-Generator/scripts/package-lock.json
+Icon-Font-Generator/scripts/package.json
+
+# Unsorted
